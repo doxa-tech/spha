@@ -1,0 +1,13 @@
+input[type='submit'] {
+  background: #9a6643;
+  border: none;
+  padding: 10px 12px;
+  color: #e8e3e2;
+  font-weight: 100;
+  border-radius: 3px;
+  margin: 1px 0;
+
+  &.preview-btn {
+    background: #43889a;
+  }
+}

@@ -1,0 +1,37 @@
+<% content_for :id, "deploy" %>
+
+<h1>Deploy</h1>
+
+<section class="explanation">
+  <h4>Explications:</h4>
+  <p><b><i>Preview</i></b> met à jours le site de prévisualisation (celui dont l'adresse commence par <i>preview</i>). Le site de prévisualisation
+    sert uniquement à pouvoir tester des changements sans pour autant les afficher sur le "vrai" site.
+  </p>
+  <p><b><i>Deploy</i></b> met à jours le "vrai" site. Les changements seront donc visibles en ligne. Toutefois, certains changements peuvent mettre
+    un certain à apparaître en ligne.
+  </p>
+</section>
+
+<section class="site">
+  <%= render "site", {url: "https://fribourg.eebulle.ch", title: "Site de Fribourg", name: "fribourg", source_url: "https://github.com/JS-Tech/eebulle.fribourg", prev_url: "http://preview.fribourg.eebulle.ch"} %>
+</section>
+
+<section class="site">
+  <%= render "site", {url: "https://romont.eebulle.ch", title: "Site de Romont", name: "romont", source_url: "https://github.com/JS-Tech/eebulle.romont", prev_url: "http://preview.romont.eebulle.ch"} %>
+</section>
+
+
+<script>
+$(document).on("ready page:load", function() {
+  $('.deploy-btn').click(function() {
+    if(confirm("Les changements vont apparaître en ligne. Continuer?")) {
+      var site = $(this).data("site");
+      $('#output-' + site).html('<%= j render partial: "deploys/output_wait" %>');
+    }
+  });
+  $('.preview-btn').click(function() {
+    var site = $(this).data("site");
+      $('#output-' + site).html('<%= j render partial: "deploys/output_wait" %>');
+  });
+});
+</script>

@@ -1,0 +1,3 @@
+console.log("<%= @output %>");
+$("#flash").html('<%= j render partial: "layouts/flash" %>');
+$("#output-" + "<%= @site %>").html('<%= j(render partial: "output", locals: { output: @res[0], status: @res[1] } ) %>');

@@ -1,0 +1,102 @@
+#container.deploy {
+
+  section.explanation {
+    padding: 0 0 20px 0;
+
+    p {
+      padding: 7px 0 4px 0;
+    }
+  }
+
+  h2 {
+    padding: 10px 0 0 0;
+
+    img {
+      vertical-align: middle;
+      padding: 0 10px 0 0;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+
+      &:hover {
+        text-decoration: underline;
+        color: #5d3800;
+      }
+    }
+  }
+
+  .infos {
+    padding: 10px 0 17px 0;
+    color: #1f1f1f;
+  }
+
+  section.site {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    margin: 0 0 7px 0;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 20px 0;
+
+    // First col
+    & > div:nth-of-type(1) {
+      flex: 1;
+
+      input[type=submit], button {
+        width: 150px;
+      }
+    }
+    // Second col
+    & > div:nth-of-type(2) {
+      flex: 1;
+    }
+  }
+
+  #output {
+    & > div {
+      margin: 20px 0;
+    }
+  }
+
+  h3 {
+    padding: 0 0 10px 0;
+  }
+
+  pre {
+    max-height: 200px;
+  }
+
+  .deploy-wait {
+    text-align: center;
+    p.wait {
+      animation: wait 1s ease infinite;
+    }
+  }
+
+  @keyframes wait {
+    0%{opacity: 1}
+    50%{opacity: 0}
+    100%{opacity: 1}
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  .row {
+    flex-direction: column !important;
+
+    // First col
+    & > div:nth-of-type(1) {
+      width: 100% !important;
+      padding: 0 0 20px 0 !important;
+    }
+    // Second col
+    & > div:nth-of-type(2) {
+      width: 100% !important;
+    }
+  }
+}

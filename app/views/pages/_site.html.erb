@@ -1,0 +1,34 @@
+<%
+# Vars:
+# - url
+# - source_url (github)
+# - prev_url (preview.site.ch)
+# - title
+# - name
+%>
+
+<h2><a href="<%= url %>" target="_blank">
+  <%= image_tag "deploy/#{name}.png" %>
+  <%= title %>
+</a></h2>
+<div class="infos">
+  <p>Source: <a href="<%= source_url %>" target="_blank"><%= source_url %></a></p>
+  <p>Site de prévisualisation: <a href="<%= prev_url %>" target="_blank"><%= prev_url %></a></p>
+</div>
+<div class="row">
+  <div>
+    <%= form_tag "/previews/preview", method: "post", remote: true do %>
+      <!-- <%= button_to "Preview romont.eebulle.ch", { controller: "previews", action: "preview", site: "romont" }, {remote: true, class: "preview-btn"} %> -->
+      <%= submit_tag "Preview", class: "preview-btn", data: {site: name} %>
+      <%= hidden_field_tag "site", name %>
+      <%= check_box_tag "open_preview", true, true %>
+      <%= label_tag "open_preview" %>
+    <% end %>
+    <%= button_to "Deploy", { controller: "deploys", action: "deploy", site: name}, {remote: true, class: "deploy-btn", data: {site: name}} %>
+  </div>
+  <div>
+    <h3>Output</h3>
+    <div id="output-<%= name %>">
+    </div>
+  </div>
+</div>
