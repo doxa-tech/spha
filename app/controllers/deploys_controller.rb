@@ -8,9 +8,7 @@ class DeploysController < ApplicationController
       when "romont"   then Open3.capture2e('bash lib/scripts/deploy_romont.sh')
       else ["Unknown site", -1]
     end
-    # @res = Open3.capture2e('bash lib/scripts/test.sh')
-    # p @res[0]
-    # flash.now[:notice] = "Here is my flash notice"
+    @exit_code = @res[1].to_s[-1].to_i
   end
 
 end

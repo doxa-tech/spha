@@ -53,6 +53,7 @@
     // Second col
     & > div:nth-of-type(2) {
       flex: 1;
+      overflow: scroll;
     }
   }
 

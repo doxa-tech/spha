@@ -7,7 +7,6 @@ class PreviewsController < ApplicationController
       else ["Unknown site", -1]
     end
     @exit_code = @res[1].to_s[-1].to_i
-    p @exit_code
     @open_preview = params[:open_preview]
   end
 end

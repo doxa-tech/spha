@@ -2,7 +2,7 @@ $("#flash").html('<%= j render partial: "layouts/flash" %>');
 $("#output-" + "<%= @site %>").html('<%= j(render partial: "deploys/output", locals: { output: @res[0], status: @res[1] } ) %>');
 
 <% if @exit_code != 0 %>
-  $("pre").addClass("console-error");
+  $("#output-" + "<%= @site %> pre").addClass("console-error");
 <% end %>
 
 <% if @open_preview && @exit_code == 0 %>
