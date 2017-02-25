@@ -1,0 +1,8 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: shpa_production
+  pool: 5
+  host: localhost
+  username: jstech
+  password:
