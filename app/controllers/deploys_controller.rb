@@ -5,7 +5,7 @@ class DeploysController < ApplicationController
     @site = params[:site]
     p "bash #{Rails.root.join('lib', 'scripts').to_s}/deploy_fribourg.sh"
     @res = case @site
-      when "fribourg" then Open3.capture2e("bash #{Rails.root.join('lib', 'scripts').to_s}/deploy_fribourg.sh")
+    when "fribourg" then Open3.capture2e("bash #{ENV['SCRIPT_PATH']}/deploy_fribourg.sh")
       when "romont"   then Open3.capture2e("bash #{Rails.root.join('lib', 'scripts').to_s}/deploy_romont.sh")
       else ["Unknown site", -1]
     end
