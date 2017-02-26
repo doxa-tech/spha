@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Auth
 gem 'adeia'
+
+gem 'bcrypt', '~> 3.1.7'

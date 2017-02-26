@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
   mount Adeia::Engine => "/adeia"
 
+  resources :sessions, only: :create
+  delete "signout", to: "sessions#destroy"
+  get "signin", to: "pages#home"
+
 end

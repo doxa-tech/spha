@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  require_login only: [:deploy]
+
   def home
   end
 
