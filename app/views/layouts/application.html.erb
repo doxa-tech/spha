@@ -15,9 +15,7 @@
       <div class="wrap">
         <%= image_tag "layout/logo.png" %>
         <%= render 'layouts/logout' %>
-        <div id="flash">
-          <%= render 'layouts/flash' %>
-        </div>
+        <%= render 'layouts/flash' %>
       </div>
     </header>
     <div id="container" class="<%= yield(:id) %>">

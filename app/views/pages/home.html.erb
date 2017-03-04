@@ -1,17 +1,15 @@
 <% content_for :id, "home" %>
 
-<p>Login</p>
+<div class="login-wrapper">
 
-<%= form_for :session, url: sessions_path do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="icon">
+    <%= image_tag "login/log-in.svg" %>
   </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+
+  <%= form_for :session, url: sessions_path do |f| %>
+      <%= f.text_field :name, placeholder: "Identifiant" %>
+      <%= f.password_field :password, placeholder:"Mot de passe" %>
+      <div class="submit"><%= f.submit "login" %></div>
+  <% end %>
+
+</div>

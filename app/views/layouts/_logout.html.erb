@@ -1,4 +1,4 @@
-<div class="logout">
+<div id="logout">
   <% if signed_in? %>
     Logged as <b><%= current_user.name %></b>. <%= link_to "Déconnexion", signout_path, method: :delete %>
   <% end %>

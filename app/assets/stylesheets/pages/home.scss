@@ -1,5 +1,46 @@
 #container.home {
-  padding: 50px;
-  width: 400px;
-  margin: auto;
+  position: absolute;
+  top: 152px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .login-wrapper {
+    width: 300px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    input {
+      padding: 10px 20px;
+      width: 100%;
+      margin: 5px 0;
+      border: none;
+    }
+
+    input[type=submit] {
+      text-transform: uppercase;
+      font-weight: 100;
+      background: #8974ad;
+      width: 150px;
+
+      &:hover {
+        background: #746196;
+      }
+    }
+
+    .submit {
+      text-align: center;
+    }
+
+    .icon {
+      text-align: center;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
 }
