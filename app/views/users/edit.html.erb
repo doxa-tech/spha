@@ -1,0 +1,30 @@
+<div id="user-form">
+
+	<%= form_for current_user, url: { action: "update" } do |f| %>
+
+		<%= render 'error_messages', object: f.object %>
+		<table>
+      <tr>
+        <td><%= f.label :current_password %></td>
+        <td><%= f.password_field :current_password %></td>
+      </tr>
+			<tr>
+				<td><%= f.label :password %></td>
+				<td><%= f.password_field :password %></td>
+			</tr>
+			<tr>
+				<td><%= f.label :password_confirmation %></td>
+				<td><%= f.password_field :password_confirmation %></td>
+			</tr>
+			<tr>
+				<td><%= f.label :name %></td>
+				<td><%= f.text_field :name %></td>
+			</tr>
+		</table>
+		<div class="submit">
+			<%= f.submit nil, class: "button" %>
+		</div>
+
+	<% end %>
+
+</div>

@@ -13,4 +13,13 @@ Rails.application.routes.draw do
   delete "signout", to: "sessions#destroy"
   get "signin", to: "pages#home"
 
+  namespace :admin do
+    resources :users, except: :show
+  end
+
+  scope :user do
+    get "edit", to: "users#edit"
+    patch "update", to: "users#update"
+  end
+
 end

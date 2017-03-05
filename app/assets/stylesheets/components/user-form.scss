@@ -1,0 +1,20 @@
+#user-form {
+  table {
+    margin: auto;
+
+    tr {
+      td:nth-of-type(1) {
+        padding: 10px 10px 10px 0;
+      }
+    }
+
+    input {
+      padding: 3px 6px;
+    }
+  }
+
+  div.submit {
+    text-align: center;
+  }
+  
+}

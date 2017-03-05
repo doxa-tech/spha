@@ -24,13 +24,20 @@ $ chmod 700 ~/.ssh
 $ ssh-keygen -t rsa -b 4096
 
 #
-# Add remote host identity
+# Add public key to the remote server
 #
-$ ssh-keyscan -p $JSPORT $REMOTE_HOST >> ~/.ssh/known_hosts
+# ... (as always)
 
 #
 # Config rights
 #
 $ sudo visudo
-# jstech ALL=(spha) NOPASSWD: /home/jstech/apps/spha/current/lib/scripts/*
+# jstech ALL=(spha) NOPASSWD: /usr/bin/ssh
+
+#
+# Create first user
+#
+$ rails c production
+> user = User.new(name: "nkcr", remember_token: "FvkYSOmc_zz1Xe4JLRohcQ", password: "1234", password_confirmation: "1234")
+> user.save
 ```

@@ -62,3 +62,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'adeia'
 
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'snaptable'
