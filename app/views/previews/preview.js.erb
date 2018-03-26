@@ -6,5 +6,5 @@ $("#output-" + "<%= @site %>").html('<%= j(render partial: "deploys/output", loc
 <% end %>
 
 <% if @open_preview && @exit_code == 0 %>
-  window.open("http://preview.<%= @site %>.eebulle.ch",'_blank');
+  window.open("http://preview.<%= @site %>",'_blank');
 <% end %>
