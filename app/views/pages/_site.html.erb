@@ -24,7 +24,7 @@
       <%= check_box_tag "open_preview", true, true %>
       <%= label_tag "open_preview" %>
     <% end %>
-    <%= button_to "Deploy", { controller: "deploys", action: "deploy", site: name}, {remote: true, class: "deploy-btn", data: {site: name}} %>
+    <%= button_to "Deploy", { controller: "deploys", action: "deploy", site: name}, {remote: true, class: "deploy-btn", data: {site: name.gsub(/\W/,'_')}} %>
   </div>
   <div>
     <h3>Output</h3>
