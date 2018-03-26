@@ -1,10 +1,10 @@
 $("#flash").html('<%= j render partial: "layouts/flash" %>');
-$("#output-" + "<%= @site %>").html('<%= j(render partial: "deploys/output", locals: { output: @res[0], status: @res[1] } ) %>');
+$("#output-" + "<%= @site_id %>").html('<%= j(render partial: "deploys/output", locals: { output: @res[0], status: @res[1] } ) %>');
 
 <% if @exit_code != 0 %>
-  $("#output-" + "<%= @site %> pre").addClass("console-error");
+  $("#output-" + "<%= @site_id %> pre").addClass("console-error");
 <% end %>
 
 <% if @open_preview && @exit_code == 0 %>
-  window.open("http://preview.<%= @site %>.eebulle.ch",'_blank');
+  window.open("http://<%= @site %>",'_blank');
 <% end %>
