@@ -20,7 +20,7 @@
     <%= form_tag "/previews/preview", method: "post", remote: true do %>
       <!-- <%= button_to "Preview romont.eebulle.ch", { controller: "previews", action: "preview", site: "romont" }, {remote: true, class: "preview-btn"} %> -->
       <%= submit_tag "Preview", class: "preview-btn", data: {site: name} %>
-      <%= hidden_field_tag "site", name %>
+      <%= hidden_field_tag "site", name.gsub(/\W/g,'_') %>
       <%= check_box_tag "open_preview", true, true %>
       <%= label_tag "open_preview" %>
     <% end %>
@@ -28,7 +28,7 @@
   </div>
   <div>
     <h3>Output</h3>
-    <div id="output-<%= name %>">
+    <div id="output-<%= name.gsub(/\W/g,'_') %>">
     </div>
   </div>
 </div>
