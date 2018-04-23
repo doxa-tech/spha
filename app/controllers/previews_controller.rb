@@ -7,7 +7,7 @@ class PreviewsController < ApplicationController
       @site = "preview.quartierlibreromont.ch"
       Open3.capture2e("bash lib/scripts/preview_quartierlibreromont.sh #{Rails.application.secrets.fribourg_user} #{Rails.application.secrets.jsport}")
     when "romont" then
-      @site = "preview-eebulle.romont.ch"
+      @site = "preview-romont.eebulle.ch"
       Open3.capture2e("bash lib/scripts/preview_romont.sh #{Rails.application.secrets.romont_user} #{Rails.application.secrets.jsport}")
     else 
       ["Unknown site: #{@site}", -1]
