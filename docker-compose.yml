@@ -1,3 +1,5 @@
+# If the database needs to be created:
+# docker exec -it 35ec304cca4e psql -U postgres -c "create database spha_development"
 version: '3'
 services:
   db:

@@ -9,6 +9,9 @@ class PreviewsController < ApplicationController
     when "romont" then
       @site = "preview-romont.eebulle.ch"
       Open3.capture2e("bash lib/scripts/preview_romont.sh #{Rails.application.secrets.romont_user} #{Rails.application.secrets.jsport}")
+    when "waykup" then
+      @site = "preview.waykup.ch"
+      Open3.capture2e("bash lib/scripts/preview_waykup.sh #{Rails.application.secrets.waykup_user} #{Rails.application.secrets.jsport}")
     else 
       ["Unknown site: #{@site}", -1]
     end
