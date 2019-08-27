@@ -35,3 +35,14 @@ $ rails c production
 > user = User.new(name: "nkcr", remember_token: "FvkYSOmc_zz1Xe4JLRohcQ", password: "1234", password_confirmation: "1234")
 > user.save
 ```
+
+## Deploy
+
+```bash
+# Start the ssh agent
+eval `ssh-agent -s`
+# Add key
+ssh-add ~/.ssh/id_rsa
+# Deploy
+cap production deploy
+```
