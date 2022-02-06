@@ -1,3 +1,5 @@
+**This technology is deprecated. We use github action to make deployments.**
+
 # README
 
 # Server installation
